@@ -104,8 +104,6 @@ export const mountCloudbase = config => {
             result: params
           })
 
-          params.where = params.where || {}
-
           return new Promise((resolve, reject) => {
             // 获取到当前环境下请求所需要的 collection
             let requestCollection = cloudbaseApp.database().collection(checkCollection({
@@ -113,34 +111,16 @@ export const mountCloudbase = config => {
               collection
             }))
 
-            let skip
-            const requestParams = () => {
-              let p = {}
-              switch(method) {
-                case 'add':
-                  p = params
-                  skip = true
-                  break;
-                case 'update':
-                  p = params.data
-                  break;
-                case 'set':
-                  p = params.data
-                  break;
-                case 'default':
-                  p = {}
-                  break;
-              }
-              return p
-            }
+            // 如果啥也没有，默认传一个空的where
+            method !== 'add' && (params.where = params.where || {})
 
             // 按当前所需构建请求方法
-            !skip && checkType(params).map(type =>
+            checkType(params).map(type =>
               requestCollection = requestCollection[type](params[type])
             )
 
             // 真正的请求
-            requestCollection[method](requestParams()).then(result => {
+            requestCollection[method](params.data || method === 'add' ? params : '').then(result => {
               // 后置处理
               try {
                 resolve(processer({
@@ -158,7 +138,7 @@ export const mountCloudbase = config => {
                   result: error,
                 }))
               }
-            }).catch(result => {
+            }).catch(error => {
                 // 错误处理
                 reject(processer({
                   type: 'fail',
