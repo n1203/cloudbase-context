@@ -1,6 +1,6 @@
 {
   "name": "cloudbase-context",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "腾讯云开发云数据库统一管理工具包，之前全局前、后置处理请求所携带的信息，分离业务以及请求代码相关。方便后续开发容错，随时做处理。",
   "homepage": "http://q.e-spy.cn/",
   "repository": {

@@ -20,6 +20,7 @@ const checkCollection = ({useDev, devCollection, collection}) => {
 const checkType = types => {
   const type = [
     'skip',
+    'doc',
     'orderBy',
     'limit',
     'field',
@@ -112,13 +113,34 @@ export const mountCloudbase = config => {
               collection
             }))
 
+            let skip
+            const requestParams = () => {
+              let p = {}
+              switch(method) {
+                case 'add':
+                  p = params
+                  skip = true
+                  break;
+                case 'update':
+                  p = params.data
+                  break;
+                case 'set':
+                  p = params.data
+                  break;
+                case 'default':
+                  p = {}
+                  break;
+              }
+              return p
+            }
+
             // 按当前所需构建请求方法
-            checkType(params).map(type =>
+            !skip && checkType(params).map(type =>
               requestCollection = requestCollection[type](params[type])
             )
 
             // 真正的请求
-            requestCollection[method]().then(result => {
+            requestCollection[method](requestParams()).then(result => {
               // 后置处理
               try {
                 resolve(processer({

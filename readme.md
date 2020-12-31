@@ -107,6 +107,81 @@ cloudbaseContext.ioCreate('example', 'databaseName', {
 ```js
 export default cloudbaseContext;
 ```
+
+此时已经准备好了 `cloudbaseContext`实例，我们要把它挂载到vue原型上，进入 `main.js` 中
+```js
+Vue.prototype.$cloudbase = cloudbaseContext;
+Vue.prototype.$io = cloudbaseContext.io;
+```
+
+## 查询条件
+- where	通过指定条件筛选出匹配的文档，可搭配查询指令（eq, gt, in, ...）使用
+- skip	跳过指定数量的文档，常用于分页，传入 offset
+- orderBy	排序方式
+- limit	返回的结果集(文档数量)的限制，有默认值和上限值
+- field	指定需要返回的字段
+## GET
+
+```js
+this.$io.example.thread.get({
+  where: {
+    userId: +userId,
+    date: _.and(_.gte(now - 2592000),_.lte(now)),
+  },
+  field: {
+    id: true,
+  },
+  ...查询条件
+})
+.then(response => {})
+.catch(error => {});
+```
+
+## Count
+
+```js
+this.$io.example.thread.count()
+.then(response => {})
+.catch(error => {});
+```
+
+## add
+
+```js
+this.$io.example.thread.add({
+  a: '',
+  b: '',
+})
+.then(response => {})
+.catch(error => {});
+```
+## remove
+
+```js
+this.$io.example.thread.remove({
+  where: {
+    userId: 1,
+  }
+})
+.then(response => {})
+.catch(error => {});
+```
+
+## update/set
+
+```js
+this.$io.example.thread.update({
+  where: {
+    userId: 1,
+  },
+  data: {
+    a: '2021',
+    a: '新年好',
+  }
+})
+.then(response => {})
+.catch(error => {});
+```
 # 文档
 空了写~
 
