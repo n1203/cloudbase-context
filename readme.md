@@ -182,6 +182,8 @@ this.$io.example.thread.update({
 .then(response => {})
 .catch(error => {});
 ```
+## 持续操作
+在所有的`response`中，都外后暴露了当前`collection`，你可以继续做`get`,`count`等操作！
 # 文档
 空了写~
 
