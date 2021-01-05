@@ -120,6 +120,7 @@ Vue.prototype.$io = cloudbaseContext.io;
 - orderBy	排序方式
 - limit	返回的结果集(文档数量)的限制，有默认值和上限值
 - field	指定需要返回的字段
+- watch	可建立监听
 ## GET
 
 ```js
