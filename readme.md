@@ -65,6 +65,11 @@ mountCloudbase({
       appAccessKey: '',
     },
   },
+  // 全局文件上传路径
+  // cloudPath: {
+  //   enable: true, // 是否启用
+  //   proFix: 'dirname'
+  // },
   // 全局统一的前置处理
   processFix: v => v,
   // 全局统一的后置处理
@@ -74,6 +79,7 @@ mountCloudbase({
 })
 ```
 方法执行完成后，可以通过调用`ioCreate`api来创建模块
+> 注意：前置、后置、错误处理函数，一但没有拿到返回值，将使用原始值。
 ```js
 // 请求模块
 // 第一个参数为模块命名空间，
@@ -85,6 +91,19 @@ cloudbaseContext.ioCreate('example', 'databaseName', {
     // devCollection = '',
     // 是否使用开发连接
     // useDev = false,
+    // 局部文件上传路径前缀,如果定义了，则优先使用本配置
+    cloudPath: {
+      enable: true, // 是否启用
+      proFix: 'dirname', // 前缀，如果定义了前缀，则忽略全局的前缀配置
+      path: '/path', // 路径前缀，如果定义了，则 proFix + path
+      // 支持的文件类型，类型检查
+      // https://www.w3school.com.cn/media/media_mimeref.asp
+      mineType: ['image/gif', 'image/jpeg'],
+      // 文件检查错误处理
+      mineTypeError: error => {
+
+      }
+    },
     // 前置处理
     processFix: params => {
       return params
