@@ -87,6 +87,8 @@ mountCloudbase({
 // 第三个参数为请求所封装的方法，每个方法默认含有 get、set、remove、update、count方法。
 cloudbaseContext.ioCreate('example', 'databaseName', {
   thread: {
+    // 当前接口类型，默认cloudDatabase(云数据库)，同时支持cloudFile(云储存)
+    type: 'cloudFile',
     // 开发连接名称
     // devCollection = '',
     // 是否使用开发连接
@@ -198,6 +200,39 @@ this.$io.example.thread.update({
     a: '2021',
     a: '新年好',
   }
+})
+.then(response => {})
+.catch(error => {});
+```
+
+## uploadFile/getTempFileURL/deleteFile/downloadFile
+文件操作
+```js
+// 上传文件
+this.$io.example.thread.uploadFile({
+  // 需要上传的文件，File 类型
+  filePath: document.getElementById("file").files[0]
+})
+.then(response => {})
+.catch(error => {});
+
+// 删除文件
+this.$io.example.thread.deleteFile({
+  fileList: ["cloud://a/b/c", "cloud://d/e/f"]
+})
+.then(response => {})
+.catch(error => {});
+
+// 下载文件
+this.$io.example.thread.downloadFile({
+  fileID: "cloud://a/b/c"
+})
+.then(response => {})
+.catch(error => {});
+
+// 下载文件
+this.$io.example.thread.getTempFileURL({
+  fileList: ["cloud://a/b/c", "cloud://d/e/f"]
 })
 .then(response => {})
 .catch(error => {});
