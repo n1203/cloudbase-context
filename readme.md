@@ -202,6 +202,45 @@ this.$io.example.thread.update({
 .then(response => {})
 .catch(error => {});
 ```
+
+针对于模块管理某些特殊情况会存在无需在模块下划分子模块的需求，此时只需要不传递第三个参数即可
+```js
+// 请求模块
+cloudbaseContext.ioCreate({
+  // 模块名称
+  moduleName: 'moduleName',
+  // 数据库名称
+  databaseName: 'databaseName',
+  // 前置处理
+  processFix: params => {
+    return params
+  },
+  // 后置处理
+  complateFix: response => {
+    return response
+  },
+  // 错误处理
+  fail: error => {
+    return error
+  },
+  // ........
+})
+```
+使用上述方式可以直接得到一个基于根的请求集合
+```js
+// 请求示例
+this.$io.moduleName.update({
+  where: {
+    userId: 1,
+  },
+  data: {
+    a: '2021',
+    a: '新年好',
+  }
+})
+.then(response => {})
+.catch(error => {});
+```
 ## 持续操作
 在所有的`response`中，都外后暴露了当前`collection`，你可以继续做`get`,`count`等操作！
 # 文档
