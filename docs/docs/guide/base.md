@@ -1,8 +1,8 @@
 ---
 nav:
   title: 基础
-  order: 1
-  toc: 'menu'
+  order: 2
+toc: 'menu'
 ---
 
 # 基础
@@ -58,3 +58,47 @@ const fetchUsers = async () => {
 ```
 // todo 针对于管理模块内的其他方法，请参考 xxxxxx 下次写
 
+## 前后置处理
+在面对复杂业务的情况，可能出现接口临时数据结构变更的情况或者更多的复杂场景，`cloudbase-context`为面对复杂场景提供了`前置处理(processFix)`、`后置处理(complateFix)`以及`失败(fail)`的情况三个钩子函数。如果需要使用这些钩子方法，可以做如下改造：
+```js
+// 请求模块
+cloudbaseApp.ioCreate({
+  // 模块名称
+  moduleName: 'users',
+  // 数据库名称
+  databaseName: 'testTable',
+  // 前置处理
+  processFix: params => {
+    return params
+  },
+  // 后置处理
+  complateFix: response => {
+    return response
+  },
+  // 错误处理
+  fail: error => {
+    return error
+  },
+})
+```
+## 全局前后置处理
+有局部的模块前后置处理函数后我们面对很多操作也会更加的方便，但是可能会出现所有数据结构都发生变更的情况，这时挨个修改很显然不合理，所以我们提供了前后置全局处理钩子，同理：
+```js
+// 实例化cloudbase-context
+const cloudbaseApp = mountCloudbase({
+  // 基本配置信息...
+
+  // 前置处理
+  processFix: params => {
+    return params
+  },
+  // 后置处理
+  complateFix: response => {
+    return response
+  },
+  // 错误处理
+  fail: error => {
+    return error
+  },
+})
+```
