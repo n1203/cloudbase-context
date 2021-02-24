@@ -11,7 +11,7 @@ toc: 'menu'
 ## 实例化cloudbase-context
 在对cloudbase-context进行相关配置并实例化后，会返回cloudbaseApp实例，后续的操作都会围绕着它来执行。
 ```js
-import {mountCloudbase} from 'cloudbase-context'
+import mountCloudbase from 'cloudbase-context'
 
 // 实例化cloudbase-context
 const cloudbaseApp = mountCloudbase({
@@ -32,6 +32,7 @@ const cloudbaseApp = mountCloudbase({
   },
 })
 ```
+还有更多的骚操作都在这里：[查看相关配置](../config)
 
 ## 创建一个接口管理模块
 假设在腾讯云开发含有数据表`testTable`，并且我们此时业务模块的命名空间为`users`，此时我们就可以这样创建一个接口管理模块。

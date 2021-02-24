@@ -15,9 +15,8 @@ toc: 'menu'
 ## 快速上手
 ### 安装
 ```bash
+# 通过npm安装
 npm i cloudbase-context
-或
+# 或通过yarn安装
 yarn add cloudbase-context
 ```
-
-

@@ -244,7 +244,7 @@ this.$io.moduleName.update({
 ## 持续操作
 在所有的`response`中，都外后暴露了当前`collection`，你可以继续做`get`,`count`等操作！
 # 文档
-空了写~
+[cloudbase-context使用文档](http://cloudbase-context.github.gold/)
 
 # 维护支持&联系作者
 - 邮箱：`pingxi8@dingtalk.com`
