@@ -275,30 +275,38 @@
   resolved "https://registry.npmjs.org/@cloudbase/adapter-interface/-/adapter-interface-0.4.1.tgz#92c37e1a844d0964dd686806c70cb00e6ccabae2"
   integrity sha512-DJBhBUMg6pYByaw4II7rawbW8nu+x+faZFIxIkWeTRSxboW/jS3NpBQ7kAbycEJVAB2DO77FsnaHKYAMLnvwzw==
 
-"@cloudbase/app@^1.2.2", "@cloudbase/app@^1.2.3":
-  version "1.2.3"
-  resolved "https://registry.npmjs.org/@cloudbase/app/-/app-1.2.3.tgz#5671be4b2003a5831477cbdcce5dc100712abb0a"
-  integrity sha512-vJO1QTN4DXIz6ZbXxVrqHKukieKYYoMbxe8H2dSSBYT17Xg1JPB06KIYjtxvSGukRdEwfgz09VQyTu9+IhcmiQ==
+"@cloudbase/analytics@^1.1.1-alpha.0":
+  version "1.1.4"
+  resolved "https://registry.npmmirror.com/@cloudbase/analytics/-/analytics-1.1.4.tgz#b8c8df0013ee052c8f53cf7a3546fd27c5368593"
+  integrity sha512-OlvmePWAOnCnxOodmRXY0Mk1RyTeDwRLbbZBqMtHD+xco63YSwbplji3vqbVmBYwVIW7Aho+b/v2flaIaFUeAw==
+  dependencies:
+    "@cloudbase/functions" "^1.3.4"
+    "@cloudbase/types" "^1.1.3-alpha.0"
+
+"@cloudbase/app@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.npmmirror.com/@cloudbase/app/-/app-1.4.1.tgz#28c57ee31e792b3d3efe93022ea55b25cc2f9429"
+  integrity sha512-MS8M0Z/iaSMTSU/N5NIFbK1H4vz8Cbrziag3jhD3iGUtZ4XqkmdskOoOVbQMvy+XF+STts18bv/T+sufjdekMw==
   dependencies:
     "@cloudbase/adapter-interface" "^0.4.0"
-    "@cloudbase/types" "^1.1.1"
-    "@cloudbase/utilities" "^1.2.2"
+    "@cloudbase/types" "^1.1.3-alpha.0"
+    "@cloudbase/utilities" "^1.3.4"
     cloudbase-adapter-wx_mp "0.2.0"
 
-"@cloudbase/auth@^1.3.2":
-  version "1.3.3"
-  resolved "https://registry.npmjs.org/@cloudbase/auth/-/auth-1.3.3.tgz#e2ffda25997b02ff499e3afc73be5139ec643294"
-  integrity sha512-R5dCN4fIhX7ljL911eEKe3nwEVovjS6SzECKytjCqwgQLfJULfL3OUKT+x4ZT+L4hZ61wX18h5DfyO3ByjtGxg==
+"@cloudbase/auth@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.npmmirror.com/@cloudbase/auth/-/auth-1.6.1.tgz#6225909e158ff9dcbc2269da05169199194e8103"
+  integrity sha512-XM2m59vzA4ZfxvHAWcd1T7J5dLc2DHjvmsHo4oSW1T3pyElISVkPSq0SaTy49jQACO+zqt1ZgnGg5CLf8lcGWA==
   dependencies:
     "@cloudbase/adapter-interface" "^0.4.0"
-    "@cloudbase/app" "^1.2.3"
-    "@cloudbase/types" "^1.1.1"
-    "@cloudbase/utilities" "^1.2.2"
+    "@cloudbase/app" "^1.4.1"
+    "@cloudbase/types" "^1.1.3-alpha.0"
+    "@cloudbase/utilities" "^1.3.4"
     sourcemapped-stacktrace "^1.1.11"
 
-"@cloudbase/database@^0.9.18-next":
+"@cloudbase/database@0.9.18-next":
   version "0.9.18-next"
-  resolved "https://registry.npmjs.org/@cloudbase/database/-/database-0.9.18-next.tgz#3c8919512c891783f3acaad7228da2dfcfd951d7"
+  resolved "https://registry.npmmirror.com/@cloudbase/database/-/database-0.9.18-next.tgz#3c8919512c891783f3acaad7228da2dfcfd951d7"
   integrity sha512-iXruD1T5scc/h+zNc7o3EdoiEr5l0eLhMH47UsIprp5livB7tdZTDX9U5EBXflYmRIG/1TrK983GsvCbKWT7iw==
   dependencies:
     bson "^4.0.2"
@@ -306,58 +314,59 @@
     lodash.set "4.3.2"
     lodash.unset "4.5.2"
 
-"@cloudbase/functions@^1.2.1":
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/@cloudbase/functions/-/functions-1.2.2.tgz#826c16c64b78e30169ca61abfc6894283772843f"
-  integrity sha512-zlihwOUGnqLaa5YRB6ZMslOsfx7+azAQqQBw0Q0WQVSely0IM4YO2THnDtAPqVBIPr38G7FztPJ6A6ukSV+O0A==
+"@cloudbase/functions@^1.3.4":
+  version "1.3.4"
+  resolved "https://registry.npmmirror.com/@cloudbase/functions/-/functions-1.3.4.tgz#b8ab065dd1eb1dc715318de15dd79e4b28c777f5"
+  integrity sha512-HaZEv+zW0NndiynfLzn3a2mii0hyZ9ANncz+/ZT66f1ZuluXeKFUgNBm3ZWIb1QA1HvSFaj9kDpz5/ftNymp3A==
   dependencies:
     "@cloudbase/adapter-interface" "^0.4.0"
-    "@cloudbase/types" "^1.1.1"
-    "@cloudbase/utilities" "^1.2.2"
+    "@cloudbase/types" "^1.1.3-alpha.0"
+    "@cloudbase/utilities" "^1.3.4"
 
-"@cloudbase/js-sdk@1.3.2":
-  version "1.3.2"
-  resolved "https://registry.npmjs.org/@cloudbase/js-sdk/-/js-sdk-1.3.2.tgz#04993a06e0aba812206a30e437bb1cabf0471cc6"
-  integrity sha512-DMUqUhAebJGTA56slrqxFU3mpClcK2yH4uqcL7cvlzvSY0Z7Ood8pqmXK9kH3n2zYxmNmw/ScuYaw9P1Rve8GA==
+"@cloudbase/js-sdk@^1.7.2":
+  version "1.7.2"
+  resolved "https://registry.npmmirror.com/@cloudbase/js-sdk/-/js-sdk-1.7.2.tgz#49a69a4531dbedb73cbfc4ebaa2820193b406530"
+  integrity sha512-CF+pd1EKNFfUO2rmj8zL4yocjTKu1GkJMjig5UAcsX+CBXS0yxQEyMvGvwUlorOCBYvlxm7i6hEUBoHrnefHMg==
   dependencies:
-    "@cloudbase/app" "^1.2.2"
-    "@cloudbase/auth" "^1.3.2"
-    "@cloudbase/database" "^0.9.18-next"
-    "@cloudbase/functions" "^1.2.1"
-    "@cloudbase/realtime" "^1.1.1"
-    "@cloudbase/storage" "^1.2.1"
-    "@cloudbase/types" "^1.1.0"
-    "@cloudbase/utilities" "^1.2.1"
+    "@cloudbase/analytics" "^1.1.1-alpha.0"
+    "@cloudbase/app" "^1.4.1"
+    "@cloudbase/auth" "^1.6.1"
+    "@cloudbase/database" "0.9.18-next"
+    "@cloudbase/functions" "^1.3.4"
+    "@cloudbase/realtime" "^1.1.4-alpha.0"
+    "@cloudbase/storage" "^1.3.4"
+    "@cloudbase/types" "^1.1.3-alpha.0"
+    "@cloudbase/utilities" "^1.3.4"
 
-"@cloudbase/realtime@^1.1.1":
-  version "1.1.2"
-  resolved "https://registry.npmjs.org/@cloudbase/realtime/-/realtime-1.1.2.tgz#b76f0541e3022446e602fee4070b67f0468421e1"
-  integrity sha512-qFZ3vF+N8ozpXLGVo0ARBG+xrWC5sE03qc0aGSvQQp4DCOLOphFyfJKgMWRl+fC9x5MLh4gqIBpdhbAaWttGmQ==
+"@cloudbase/realtime@^1.1.4-alpha.0":
+  version "1.1.4-alpha.0"
+  resolved "https://registry.npmmirror.com/@cloudbase/realtime/-/realtime-1.1.4-alpha.0.tgz#21c538d5df15ee703fb3766ee733a9d7f7676416"
+  integrity sha512-pT9wHPfQDSLNws+C1ki+5liUlHHyK+OLUTvKfq8HB3yyXCJz5R1O1BqVJTjRs7RW0J+mzUKB2tGuIL6M5Kcptw==
   dependencies:
-    "@cloudbase/types" "^1.1.1"
+    "@cloudbase/types" "^1.1.3-alpha.0"
 
-"@cloudbase/storage@^1.2.1":
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/@cloudbase/storage/-/storage-1.2.2.tgz#af53fdf6850207165fb91b0a2d385e27b9bd4eae"
-  integrity sha512-HsoLl05t4qykn5dLlDq0RMQECdJQKRB/0fUAMU1ouljNczYhJsmaNsz7bXH50RKb5Y1l8cDzrzku8IFyUTdraw==
+"@cloudbase/storage@^1.3.4":
+  version "1.3.4"
+  resolved "https://registry.npmmirror.com/@cloudbase/storage/-/storage-1.3.4.tgz#522c283ad9cb4fc727f063c4ef4653a9762f0890"
+  integrity sha512-q+bMNl61gvfyCUPmNGGgXZ2mVKLFqRDJR8CGGt3wBxJwt9eO7yOLjTAb0vdLXNpfdJ/ZovdxiQd8kZEB0+5m0w==
   dependencies:
-    "@cloudbase/types" "^1.1.1"
-    "@cloudbase/utilities" "^1.2.2"
+    "@cloudbase/types" "^1.1.3-alpha.0"
+    "@cloudbase/utilities" "^1.3.4"
 
-"@cloudbase/types@^1.1.0", "@cloudbase/types@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/@cloudbase/types/-/types-1.1.1.tgz#51895d5a878df46d9ba8ca3bfdabc17e54607006"
-  integrity sha512-Viw62iazQu83y3AvJj+JPNSFodpsuVqfrGFUfR03AA2XL72xc1Tw1f/21vG5L5K9pPqT38MxYuZCXRnhRtCjlQ==
-  dependencies:
-    "@cloudbase/adapter-interface" "^0.4.0"
-
-"@cloudbase/utilities@^1.2.1", "@cloudbase/utilities@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/@cloudbase/utilities/-/utilities-1.2.2.tgz#0b6eef8c24f7956c453924da8139cda980d2bd90"
-  integrity sha512-mxWG5wW8Gr48sCfm+UzP54t6MwGlJF72q3U5MzInlliJV76nt/LiBsYoieYGvd8Um8OK6MavXfnBf2TIc/F07g==
+"@cloudbase/types@^1.1.3-alpha.0":
+  version "1.1.3-alpha.0"
+  resolved "https://registry.npmmirror.com/@cloudbase/types/-/types-1.1.3-alpha.0.tgz#adf754c620f5d58f9758639d0d7f4f6f3e12a330"
+  integrity sha512-BIfILvpEjQmnYdhyHQ4m9QihxlV1kucPVG9AS+z5vZfbn2Jo75xgkex0F2qV4tV7YrQIrzQYtQmJbgG7TwAaSw==
   dependencies:
     "@cloudbase/adapter-interface" "^0.4.0"
-    "@cloudbase/types" "^1.1.1"
+
+"@cloudbase/utilities@^1.3.4":
+  version "1.3.4"
+  resolved "https://registry.npmmirror.com/@cloudbase/utilities/-/utilities-1.3.4.tgz#40d828fd9a561c2be49fe12cda4e1f7faf6b95e2"
+  integrity sha512-bw3e9UxE+gHr5XKFJNkPSjftverVed1za+ruYHs+/G+5AzZRtt2R6Kxt/9q+iFwAL2/oGq/zir0r7ora78OFZQ==
+  dependencies:
+    "@cloudbase/adapter-interface" "^0.4.0"
+    "@cloudbase/types" "^1.1.3-alpha.0"
     crypto-js "3"
 
 "@cnakazawa/watch@^1.0.3":
